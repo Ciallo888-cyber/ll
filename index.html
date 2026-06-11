@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>全人類リトルデーモン企画｜津岛善子 7.13 生日前期写信企划</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body {
             background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -18,11 +13,7 @@
             padding: 16px 12px 40px;
             min-height: 100vh;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-        }
+        .container { max-width: 600px; margin: 0 auto; width: 100%; }
         .card {
             background: rgba(30, 15, 55, 0.75);
             backdrop-filter: blur(8px);
@@ -31,43 +22,13 @@
             margin-bottom: 20px;
             border: 1px solid rgba(180, 100, 220, 0.35);
         }
-        .hero h1 {
-            font-size: 24px;
-            text-align: center;
-            line-height: 1.35;
-        }
-        .hero h1 small {
-            font-size: 13px;
-            display: block;
-            color: #d9c6ff;
-            margin-top: 8px;
-        }
-        .hero .sub {
-            text-align: center;
-            font-size: 13px;
-            color: #cdb5ff;
-            margin-top: 12px;
-            border-top: 1px solid rgba(180, 100, 220, 0.3);
-            padding-top: 12px;
-        }
-        .intro p {
-            font-size: 14px;
-            line-height: 1.55;
-            margin-bottom: 10px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .required:after {
-            content: " *";
-            color: #ff8888;
-        }
+        .hero h1 { font-size: 24px; text-align: center; line-height: 1.35; }
+        .hero h1 small { font-size: 13px; display: block; color: #d9c6ff; margin-top: 8px; }
+        .hero .sub { text-align: center; font-size: 13px; color: #cdb5ff; margin-top: 12px; border-top: 1px solid rgba(180, 100, 220, 0.3); padding-top: 12px; }
+        .intro p { font-size: 14px; line-height: 1.55; margin-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+        .required:after { content: " *"; color: #ff8888; }
         input, select, textarea {
             width: 100%;
             padding: 14px 16px;
@@ -78,18 +39,9 @@
             color: #fff;
             font-family: inherit;
         }
-        input, select {
-            height: 52px;
-        }
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #c084fc;
-            box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3);
-        }
+        input, select { height: 52px; }
+        textarea { min-height: 150px; resize: vertical; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #c084fc; box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3); }
         .radio-group {
             background: rgba(20, 10, 40, 0.6);
             padding: 12px 14px;
@@ -98,35 +50,11 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        .radio-group label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: normal;
-            margin: 0;
-            font-size: 15px;
-        }
-        .radio-group input {
-            width: 20px;
-            height: 20px;
-            margin: 0;
-            accent-color: #8b5cf6;
-        }
-        .char-counter {
-            font-size: 12px;
-            margin-top: 6px;
-            color: #b9a5ff;
-            text-align: right;
-        }
-        .error-msg {
-            color: #ff9e9e;
-            font-size: 12px;
-            margin-top: 6px;
-            display: none;
-        }
-        .error-msg.show {
-            display: block;
-        }
+        .radio-group label { display: inline-flex; align-items: center; gap: 8px; font-weight: normal; margin: 0; font-size: 15px; }
+        .radio-group input { width: 20px; height: 20px; margin: 0; accent-color: #8b5cf6; }
+        .char-counter { font-size: 12px; margin-top: 6px; color: #b9a5ff; text-align: right; }
+        .error-msg { color: #ff9e9e; font-size: 12px; margin-top: 6px; display: none; }
+        .error-msg.show { display: block; }
         .btn {
             width: 100%;
             padding: 14px 20px;
@@ -140,42 +68,15 @@
             margin-top: 16px;
             min-height: 52px;
         }
-        .btn:active {
-            transform: scale(0.97);
-        }
-        .btn:disabled {
-            opacity: 0.6;
-        }
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid #a67cff;
-            margin-top: 12px;
-        }
-        .success-card {
-            text-align: center;
-        }
-        .success-card h2 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: #d9b0ff;
-        }
-        .success-card p {
-            font-size: 15px;
-            line-height: 1.55;
-            margin-bottom: 20px;
-        }
-        .footer {
-            text-align: center;
-            font-size: 11px;
-            color: #8c7aaf;
-            margin-top: 30px;
-        }
-        .page {
-            display: block;
-        }
-        .page.hidden {
-            display: none;
-        }
+        .btn:active { transform: scale(0.97); }
+        .btn:disabled { opacity: 0.6; }
+        .btn-secondary { background: transparent; border: 1px solid #a67cff; margin-top: 12px; }
+        .success-card { text-align: center; }
+        .success-card h2 { font-size: 24px; margin-bottom: 16px; color: #d9b0ff; }
+        .success-card p { font-size: 15px; line-height: 1.55; margin-bottom: 20px; }
+        .footer { text-align: center; font-size: 11px; color: #8c7aaf; margin-top: 30px; }
+        .page { display: block; }
+        .page.hidden { display: none; }
         @media (max-width: 400px) {
             body { padding: 12px 10px 32px; }
             .card { padding: 18px 14px; }
@@ -302,132 +203,131 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
-    // Supabase 配置
-    const SUPABASE_URL = "https://okqfekxeqxqazahzqtgu.supabase.co";
-    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rcWZla3hlcXhxYXphaHpxdGd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExNTE1OTQsImV4cCI6MjA5NjcyNzU5NH0.GQK4aCdaTPl8GpfokKNGOrrWfn_47loYSQlh60maVtc";
+    (function() {
+        // Supabase 配置
+        const SUPABASE_URL = "https://okqfekxeqxqazahzqtgu.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rcWZla3hlcXhxYXphaHpxdGd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExNTE1OTQsImV4cCI6MjA5NjcyNzU5NH0.GQK4aCdaTPl8GpfokKNGOrrWfn_47loYSQlh60maVtc";
 
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // 页面元素
-    const pageHome = document.getElementById('pageHome');
-    const pageForm = document.getElementById('pageForm');
-    const pageSuccess = document.getElementById('pageSuccess');
+        // 页面元素
+        const pageHome = document.getElementById('pageHome');
+        const pageForm = document.getElementById('pageForm');
+        const pageSuccess = document.getElementById('pageSuccess');
 
-    // 按钮
-    const btnGoToForm = document.getElementById('btnGoToForm');
-    const btnBackToHome = document.getElementById('btnBackToHome');
-    const btnSuccessToHome = document.getElementById('btnSuccessToHome');
-    const btnWriteAgain = document.getElementById('btnWriteAgain');
-    const btnSubmit = document.getElementById('btnSubmit');
+        // 按钮
+        const btnGoToForm = document.getElementById('btnGoToForm');
+        const btnBackToHome = document.getElementById('btnBackToHome');
+        const btnSuccessToHome = document.getElementById('btnSuccessToHome');
+        const btnWriteAgain = document.getElementById('btnWriteAgain');
+        const btnSubmit = document.getElementById('btnSubmit');
 
-    // 表单元素
-    const nicknameInput = document.getElementById('nickname');
-    const regionSelect = document.getElementById('regionSelect');
-    const regionOther = document.getElementById('regionOther');
-    const letterBody = document.getElementById('letterBody');
-    const sourceSelect = document.getElementById('source');
-    const charSpan = document.getElementById('charCount');
-    const nicknameError = document.getElementById('nicknameError');
-    const letterError = document.getElementById('letterError');
+        // 表单元素
+        const nicknameInput = document.getElementById('nickname');
+        const regionSelect = document.getElementById('regionSelect');
+        const regionOther = document.getElementById('regionOther');
+        const letterBody = document.getElementById('letterBody');
+        const sourceSelect = document.getElementById('source');
+        const charSpan = document.getElementById('charCount');
+        const nicknameError = document.getElementById('nicknameError');
+        const letterError = document.getElementById('letterError');
 
-    // 页面切换函数
-    function showPage(page) {
-        pageHome.classList.add('hidden');
-        pageForm.classList.add('hidden');
-        pageSuccess.classList.add('hidden');
-        page.classList.remove('hidden');
-    }
-
-    // 地区：选择"其他"时显示输入框
-    regionSelect.addEventListener('change', function() {
-        regionOther.style.display = this.value === '其他' ? 'block' : 'none';
-    });
-
-    function getRegionValue() {
-        return regionSelect.value === '其他' ? (regionOther.value.trim() || '其他') : regionSelect.value;
-    }
-
-    // 字数统计
-    letterBody.addEventListener('input', function() {
-        let len = this.value.length;
-        if (len > 1500) this.value = this.value.slice(0, 1500);
-        charSpan.textContent = Math.min(this.value.length, 1500);
-        letterError.classList.remove('show');
-    });
-
-    nicknameInput.addEventListener('input', () => nicknameError.classList.remove('show'));
-
-    function getRadioValue(name) {
-        let el = document.querySelector(`input[name="${name}"]:checked`);
-        return el ? el.value : '';
-    }
-
-    function validateForm() {
-        let ok = true;
-        if (!nicknameInput.value.trim()) {
-            nicknameError.classList.add('show');
-            ok = false;
+        function showPage(page) {
+            pageHome.classList.add('hidden');
+            pageForm.classList.add('hidden');
+            pageSuccess.classList.add('hidden');
+            page.classList.remove('hidden');
         }
-        let len = letterBody.value.trim().length;
-        if (len < 10 || len > 1500) {
-            letterError.classList.add('show');
-            ok = false;
+
+        regionSelect.addEventListener('change', function() {
+            regionOther.style.display = this.value === '其他' ? 'block' : 'none';
+        });
+
+        function getRegionValue() {
+            return regionSelect.value === '其他' ? (regionOther.value.trim() || '其他') : regionSelect.value;
         }
-        return ok;
-    }
 
-    function resetForm() {
-        nicknameInput.value = '';
-        regionSelect.value = '';
-        regionOther.value = '';
-        regionOther.style.display = 'none';
-        letterBody.value = '';
-        sourceSelect.value = '';
-        charSpan.textContent = '0';
-        document.querySelector('input[name="anonymous"][value="显示昵称"]').checked = true;
-        document.querySelector('input[name="allowBooklet"][value="同意"]').checked = true;
-        document.querySelector('input[name="allowNumazu"][value="同意"]').checked = true;
-    }
+        letterBody.addEventListener('input', function() {
+            let len = this.value.length;
+            if (len > 1500) this.value = this.value.slice(0, 1500);
+            charSpan.textContent = Math.min(this.value.length, 1500);
+            letterError.classList.remove('show');
+        });
 
-    // 按钮事件
-    btnGoToForm.onclick = () => showPage(pageForm);
-    btnBackToHome.onclick = () => showPage(pageHome);
-    btnSuccessToHome.onclick = () => showPage(pageHome);
-    btnWriteAgain.onclick = () => {
-        resetForm();
-        showPage(pageForm);
-    };
+        nicknameInput.addEventListener('input', function() {
+            nicknameError.classList.remove('show');
+        });
 
-    // 提交
-    btnSubmit.onclick = async () => {
-        if (!validateForm()) return;
+        function getRadioValue(name) {
+            const el = document.querySelector(`input[name="${name}"]:checked`);
+            return el ? el.value : '';
+        }
 
-        const data = {
-            nickname: nicknameInput.value.trim(),
-            anonymous: getRadioValue('anonymous'),
-            region: getRegionValue() || null,
-            letter_body: letterBody.value.trim(),
-            allow_booklet: getRadioValue('allowBooklet'),
-            allow_numazu: getRadioValue('allowNumazu'),
-            source: sourceSelect.value || null
+        function validateForm() {
+            let ok = true;
+            if (!nicknameInput.value.trim()) {
+                nicknameError.classList.add('show');
+                ok = false;
+            }
+            const len = letterBody.value.trim().length;
+            if (len < 10 || len > 1500) {
+                letterError.classList.add('show');
+                ok = false;
+            }
+            return ok;
+        }
+
+        function resetForm() {
+            nicknameInput.value = '';
+            regionSelect.value = '';
+            regionOther.value = '';
+            regionOther.style.display = 'none';
+            letterBody.value = '';
+            sourceSelect.value = '';
+            charSpan.textContent = '0';
+            document.querySelector('input[name="anonymous"][value="显示昵称"]').checked = true;
+            document.querySelector('input[name="allowBooklet"][value="同意"]').checked = true;
+            document.querySelector('input[name="allowNumazu"][value="同意"]').checked = true;
+        }
+
+        btnGoToForm.onclick = function() { showPage(pageForm); };
+        btnBackToHome.onclick = function() { showPage(pageHome); };
+        btnSuccessToHome.onclick = function() { showPage(pageHome); };
+        btnWriteAgain.onclick = function() {
+            resetForm();
+            showPage(pageForm);
         };
 
-        btnSubmit.disabled = true;
-        btnSubmit.innerText = '✧ 寄送中... ✧';
+        btnSubmit.onclick = async function() {
+            if (!validateForm()) return;
 
-        const { error } = await supabase.from('letters').insert([data]);
+            const data = {
+                nickname: nicknameInput.value.trim(),
+                anonymous: getRadioValue('anonymous'),
+                region: getRegionValue() || null,
+                letter_body: letterBody.value.trim(),
+                allow_booklet: getRadioValue('allowBooklet'),
+                allow_numazu: getRadioValue('allowNumazu'),
+                source: sourceSelect.value || null
+            };
 
-        if (error) {
-            alert('提交失败：' + error.message);
-        } else {
-            resetForm();
-            showPage(pageSuccess);
-        }
-        btnSubmit.disabled = false;
-        btnSubmit.innerText = '✧ 寄出这份心意 ✧';
-    };
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = '✧ 寄送中... ✧';
+
+            const { error } = await supabase.from('letters').insert([data]);
+
+            if (error) {
+                alert('提交失败：' + error.message);
+            } else {
+                resetForm();
+                showPage(pageSuccess);
+            }
+            btnSubmit.disabled = false;
+            btnSubmit.innerText = '✧ 寄出这份心意 ✧';
+        };
+    })();
 </script>
 </body>
 </html>
