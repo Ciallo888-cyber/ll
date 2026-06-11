@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>全人類リトルデーモン企画｜津岛善子 7.13 生日前期写信企划</title>
+    <meta name="description" content="写下你想对善子说的话，这份祝福将被整理并带到沼津河畔酒店等地。">
+    <meta property="og:title" content="全人類リトルデーモン企画">
+    <meta property="og:description" content="津岛善子 7.13 生日前期写信企划">
+    <style>
+        /* reset & 基础 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #f0e6ff;
+            padding: 16px 12px 40px;
+            min-height: 100vh;
+        }
+
+        /* 容器宽度按手机 390px 基准，但自适应 */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* 卡片：半透明磨砂，符合文档要求 */
+        .card {
+            background: rgba(30, 15, 55, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 20px 18px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(180, 100, 220, 0.35);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 标题区 */
+        .hero h1 {
+            font-size: 24px;
+            text-align: center;
+            line-height: 1.35;
+            letter-spacing: 1px;
+        }
+        .hero h1 small {
+            font-size: 13px;
+            display: block;
+            color: #d9c6ff;
+            margin-top: 8px;
+        }
+        .hero .sub {
+            text-align: center;
+            font-size: 13px;
+            color: #cdb5ff;
+            margin-top: 12px;
+            border-top: 1px solid rgba(180, 100, 220, 0.3);
+            padding-top: 12px;
+        }
+
+        /* 企划说明 */
+        .intro p {
+            font-size: 14px;
+            line-height: 1.55;
+            margin-bottom: 10px;
+        }
+
+        /* 表单元素 */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .required:after {
+            content: " *";
+            color: #ff8888;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 8, 30, 0.9);
+            border: 1px solid #8b5cf6;
+            border-radius: 24px;
+            font-size: 16px;
+            color: #fff;
+            font-family: inherit;
+            transition: 0.15s;
+        }
+        /* 手机端输入框高度足够 */
+        input, select {
+            height: 52px;
+        }
+        textarea {
+            min-height: 150px;  /* 约6-8行 */
+            resize: vertical;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #c084fc;
+            box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3);
+        }
+
+        /* 单选按钮组 */
+        .radio-group {
+            background: rgba(20, 10, 40, 0.6);
+            padding: 12px 14px;
+            border-radius: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            margin: 0;
+            font-size: 15px;
+        }
+        .radio-group input {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            accent-color: #8b5cf6;
+        }
+
+        /* 辅助文本 */
+        .help-text, .char-counter {
+            font-size: 12px;
+            margin-top: 6px;
+            color: #b9a5ff;
+            text-align: right;
+        }
+        .error-msg {
+            color: #ff9e9e;
+            font-size: 12px;
+            margin-top: 6px;
+            display: none;
+        }
+        .error-msg.show {
+            display: block;
+        }
+
+        /* 按钮：高度至少 44px，手机方便点击 */
+        .btn {
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(95deg, #8b5cf6, #6d28d9);
+            border: none;
+            border-radius: 60px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.1s;
+            margin-top: 16px;
+            min-height: 52px;
+        }
+        .btn:active {
+            transform: scale(0.97);
+        }
+        .btn:disabled {
+            opacity: 0.6;
+            transform: none;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #a67cff;
+            margin-top: 12px;
+        }
+
+        /* 成功页 */
+        .success-card {
+            text-align: center;
+        }
+        .success-card h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #d9b0ff;
+        }
+        .success-card p {
+            font-size: 15px;
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #8c7aaf;
+            margin-top: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* 针对 375px 小屏幕微调 */
+        @media (max-width: 400px) {
+            body {
+                padding: 12px 10px 32px;
+            }
+            .card {
+                padding: 18px 14px;
+            }
+            .hero h1 {
+                font-size: 22px;
+            }
+            .radio-group {
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 主表单页 -->
+    <div id="formPage">
+        <div class="card hero">
+            <h1>全人類リトルデーモン企画<br><small>津岛善子 7.13 生日前期写信企划</small></h1>
+            <div class="sub">✧ 写下你想对善子说的话 ✧</div>
+        </div>
+
+        <div class="card intro">
+            <p>这是一个小型生日前期写信企划。写下你对善子的祝福，这份心意将被整理并带到沼津河畔酒店等地，也会用于后续纪念刊物。</p>
+            <p>✧ 你的信件会被认真阅读和珍藏 ✧</p>
+        </div>
+
+        <div class="card">
+            <!-- 昵称 -->
+            <div class="form-group">
+                <label class="required">昵称</label>
+                <input type="text" id="nickname" maxlength="30" placeholder="用于署名，1-30字">
+                <div class="error-msg" id="nicknameError">请填写昵称</div>
+            </div>
+
+            <!-- 是否匿名 -->
+            <div class="form-group">
+                <label class="required">是否匿名刊登</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="anonymous" value="显示昵称" checked> 显示昵称</label>
+                    <label><input type="radio" name="anonymous" value="匿名"> 匿名刊登</label>
+                </div>
+            </div>
+
+            <!-- 城市/地区 -->
+            <div class="form-group">
+                <label>城市/地区（选填）</label>
+                <input type="text" id="region" placeholder="例如：东京 / 上海 / 沼津">
+            </div>
+
+            <!-- 信件内容 -->
+            <div class="form-group">
+                <label class="required">写给善子的信</label>
+                <textarea id="letterBody" rows="6" placeholder="写下你想对善子说的话...（10-1500字）"></textarea>
+                <div class="char-counter"><span id="charCount">0</span> / 1500 字</div>
+                <div class="error-msg" id="letterError">请填写10-1500字</div>
+            </div>
+
+            <!-- 同意刊物 -->
+            <div class="form-group">
+                <label class="required">是否同意收录进纪念刊物</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="allowBooklet" value="同意" checked> 同意</label>
+                    <label><input type="radio" name="allowBooklet" value="不同意"> 不同意</label>
+                </div>
+            </div>
+
+            <!-- 同意带到沼津 -->
+            <div class="form-group">
+                <label class="required">是否同意整理后带到沼津河畔酒店等地</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="allowNumazu" value="同意" checked> 同意</label>
+                    <label><input type="radio" name="allowNumazu" value="不同意"> 不同意</label>
+                </div>
+            </div>
+
+            <!-- 参与来源 -->
+            <div class="form-group">
+                <label>参与来源（选填）</label>
+                <select id="source">
+                    <option value="">请选择</option>
+                    <option value="QQ">QQ</option>
+                    <option value="微博">微博</option>
+                    <option value="河南生日会">河南生日会</option>
+                    <option value="国内其他线下活动">国内其他线下活动</option>
+                    <option value="朋友转发">朋友转发</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+
+            <button class="btn" id="submitBtn">✧ 寄出这份心意 ✧</button>
+        </div>
+        <div class="footer">
+            <p>本企划为粉丝自发活动，非官方企划。<br>信件将用于纪念刊物及现地记录，不会用于其他商业用途。</p>
+        </div>
+    </div>
+
+    <!-- 成功页 -->
+    <div id="successPage" class="hidden">
+        <div class="card success-card">
+            <h2>✧ 你的信已经成功投递 ✧</h2>
+            <p>感谢你参与「全人類リトルデーモン企画」。<br><br>这份祝福将在整理后，与其他 Little Demon 的心意一起送往沼津河畔酒店等地。</p>
+            <button class="btn" id="backHomeBtn">🏠 返回首页</button>
+            <button class="btn btn-secondary" id="writeAgainBtn">✉️ 再写一封</button>
+        </div>
+        <div class="footer">
+            <p>本企划为粉丝自发活动，非官方企划。</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    // Supabase 配置（你提供的正确值）
+    const SUPABASE_URL = "https://okqfekxeqxqazahzqtgu.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rcWZla3hlcXhxYXphaHpxdGd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExNTE1OTQsImV4cCI6MjA5NjcyNzU5NH0.GQK4aCdaTPl8GpfokKNGOrrWfn_47loYSQlh60maVtc";
+
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // DOM 元素
+    const formPage = document.getElementById('formPage');
+    const successPage = document.getElementById('successPage');
+    const submitBtn = document.getElementById('submitBtn');
+    const nicknameInput = document.getElementById('nickname');
+    const regionInput = document.getElementById('region');
+    const letterBody = document.getElementById('letterBody');
+    const sourceSelect = document.getElementById('source');
+    const charSpan = document.getElementById('charCount');
+    const nicknameError = document.getElementById('nicknameError');
+    const letterError = document.getElementById('letterError');
+
+    // 字数限制
+    letterBody.addEventListener('input', function() {
+        let len = this.value.length;
+        if (len > 1500) {
+            this.value = this.value.slice(0, 1500);
+            len = 1500;
+        }
+        charSpan.textContent = len;
+        if (letterError.classList.contains('show')) letterError.classList.remove('show');
+    });
+
+    nicknameInput.addEventListener('input', () => {
+        if (nicknameError.classList.contains('show')) nicknameError.classList.remove('show');
+    });
+
+    // 获取单选值
+    function getRadioValue(name) {
+        let selected = document.querySelector(`input[name="${name}"]:checked`);
+        return selected ? selected.value : '';
+    }
+
+    // 前端校验
+    function validateForm() {
+        let valid = true;
+        const nickname = nicknameInput.value.trim();
+        const letter = letterBody.value.trim();
+        if (!nickname) {
+            nicknameError.classList.add('show');
+            valid = false;
+        } else {
+            nicknameError.classList.remove('show');
+        }
+        const len = letter.length;
+        if (len < 10 || len > 1500) {
+            letterError.classList.add('show');
+            valid = false;
+        } else {
+            letterError.classList.remove('show');
+        }
+        return valid;
+    }
+
+    function resetFormFields() {
+        nicknameInput.value = '';
+        regionInput.value = '';
+        letterBody.value = '';
+        sourceSelect.value = '';
+        charSpan.textContent = '0';
+        // 重置单选为默认
+        document.querySelectorAll('input[name="anonymous"]')[0].checked = true;
+        document.querySelectorAll('input[name="allowBooklet"]')[0].checked = true;
+        document.querySelectorAll('input[name="allowNumazu"]')[0].checked = true;
+    }
+
+    function showSuccess() {
+        formPage.classList.add('hidden');
+        successPage.classList.remove('hidden');
+    }
+
+    function showForm() {
+        successPage.classList.add('hidden');
+        formPage.classList.remove('hidden');
+        resetFormFields();
+    }
+
+    // 提交到 Supabase
+    submitBtn.onclick = async () => {
+        if (!validateForm()) return;
+
+        const data = {
+            nickname: nicknameInput.value.trim(),
+            anonymous: getRadioValue('anonymous'),
+            region: regionInput.value.trim() || null,
+            letter_body: letterBody.value.trim(),
+            allow_booklet: getRadioValue('allowBooklet'),
+            allow_numazu: getRadioValue('allowNumazu'),
+            source: sourceSelect.value || null
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = '✧ 寄送中... ✧';
+
+        const { error } = await supabase.from('letters').insert([data]);
+
+        if (error) {
+            alert('提交失败：' + error.message + '，请稍后重试');
+            console.error(error);
+        } else {
+            showSuccess();
+        }
+        submitBtn.disabled = false;
+        submitBtn.innerText = '✧ 寄出这份心意 ✧';
+    };
+
+    document.getElementById('backHomeBtn').addEventListener('click', showForm);
+    document.getElementById('writeAgainBtn').addEventListener('click', showForm);
+</script>
+</body>
+</html>
