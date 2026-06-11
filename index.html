@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>全人類リトルデーモン企画｜津岛善子 7.13 生日前期写信企划</title>
-    <meta name="description" content="写下你想对善子说的话，这份祝福将被整理并带到沼津河畔酒店等地。">
-    <meta property="og:title" content="全人類リトルデーモン企画">
-    <meta property="og:description" content="津岛善子 7.13 生日前期写信企划">
     <style>
-        /* reset & 基础 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
-
         body {
             background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -23,15 +18,11 @@
             padding: 16px 12px 40px;
             min-height: 100vh;
         }
-
-        /* 容器宽度按手机 390px 基准，但自适应 */
         .container {
             max-width: 600px;
             margin: 0 auto;
             width: 100%;
         }
-
-        /* 卡片：半透明磨砂，符合文档要求 */
         .card {
             background: rgba(30, 15, 55, 0.75);
             backdrop-filter: blur(8px);
@@ -39,15 +30,11 @@
             padding: 20px 18px;
             margin-bottom: 20px;
             border: 1px solid rgba(180, 100, 220, 0.35);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
-        /* 标题区 */
         .hero h1 {
             font-size: 24px;
             text-align: center;
             line-height: 1.35;
-            letter-spacing: 1px;
         }
         .hero h1 small {
             font-size: 13px;
@@ -63,15 +50,11 @@
             border-top: 1px solid rgba(180, 100, 220, 0.3);
             padding-top: 12px;
         }
-
-        /* 企划说明 */
         .intro p {
             font-size: 14px;
             line-height: 1.55;
             margin-bottom: 10px;
         }
-
-        /* 表单元素 */
         .form-group {
             margin-bottom: 20px;
         }
@@ -94,14 +77,12 @@
             font-size: 16px;
             color: #fff;
             font-family: inherit;
-            transition: 0.15s;
         }
-        /* 手机端输入框高度足够 */
         input, select {
             height: 52px;
         }
         textarea {
-            min-height: 150px;  /* 约6-8行 */
+            min-height: 150px;
             resize: vertical;
         }
         input:focus, select:focus, textarea:focus {
@@ -109,8 +90,6 @@
             border-color: #c084fc;
             box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3);
         }
-
-        /* 单选按钮组 */
         .radio-group {
             background: rgba(20, 10, 40, 0.6);
             padding: 12px 14px;
@@ -133,9 +112,7 @@
             margin: 0;
             accent-color: #8b5cf6;
         }
-
-        /* 辅助文本 */
-        .help-text, .char-counter {
+        .char-counter {
             font-size: 12px;
             margin-top: 6px;
             color: #b9a5ff;
@@ -150,8 +127,6 @@
         .error-msg.show {
             display: block;
         }
-
-        /* 按钮：高度至少 44px，手机方便点击 */
         .btn {
             width: 100%;
             padding: 14px 20px;
@@ -162,7 +137,6 @@
             font-size: 17px;
             font-weight: 600;
             cursor: pointer;
-            transition: 0.1s;
             margin-top: 16px;
             min-height: 52px;
         }
@@ -171,15 +145,12 @@
         }
         .btn:disabled {
             opacity: 0.6;
-            transform: none;
         }
         .btn-secondary {
             background: transparent;
             border: 1px solid #a67cff;
             margin-top: 12px;
         }
-
-        /* 成功页 */
         .success-card {
             text-align: center;
         }
@@ -193,58 +164,57 @@
             line-height: 1.55;
             margin-bottom: 20px;
         }
-
         .footer {
             text-align: center;
             font-size: 11px;
             color: #8c7aaf;
             margin-top: 30px;
         }
-
-        .hidden {
+        .page {
+            display: block;
+        }
+        .page.hidden {
             display: none;
         }
-
-        /* 针对 375px 小屏幕微调 */
         @media (max-width: 400px) {
-            body {
-                padding: 12px 10px 32px;
-            }
-            .card {
-                padding: 18px 14px;
-            }
-            .hero h1 {
-                font-size: 22px;
-            }
-            .radio-group {
-                gap: 14px;
-            }
+            body { padding: 12px 10px 32px; }
+            .card { padding: 18px 14px; }
+            .hero h1 { font-size: 22px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <!-- 主表单页 -->
-    <div id="formPage">
+    <!-- 页面1：首页 -->
+    <div id="pageHome" class="page">
         <div class="card hero">
             <h1>全人類リトルデーモン企画<br><small>津岛善子 7.13 生日前期写信企划</small></h1>
             <div class="sub">✧ 写下你想对善子说的话 ✧</div>
         </div>
-
         <div class="card intro">
             <p>这是一个小型生日前期写信企划。写下你对善子的祝福，这份心意将被整理并带到沼津河畔酒店等地，也会用于后续纪念刊物。</p>
             <p>✧ 你的信件会被认真阅读和珍藏 ✧</p>
         </div>
-
         <div class="card">
-            <!-- 昵称 -->
+            <button class="btn" id="btnGoToForm">✧ 写信给善子 ✧</button>
+        </div>
+        <div class="footer">
+            <p>本企划为粉丝自发活动，非官方企划。<br>信件将用于纪念刊物及现地记录，不会用于其他商业用途。</p>
+        </div>
+    </div>
+
+    <!-- 页面2：表单页 -->
+    <div id="pageForm" class="page hidden">
+        <div class="card hero">
+            <h1>全人類リトルデーモン企画<br><small>津岛善子 7.13 生日前期写信企划</small></h1>
+            <div class="sub">✧ 写下你想对善子说的话 ✧</div>
+        </div>
+        <div class="card">
             <div class="form-group">
                 <label class="required">昵称</label>
                 <input type="text" id="nickname" maxlength="30" placeholder="用于署名，1-30字">
                 <div class="error-msg" id="nicknameError">请填写昵称</div>
             </div>
-
-            <!-- 是否匿名 -->
             <div class="form-group">
                 <label class="required">是否匿名刊登</label>
                 <div class="radio-group">
@@ -252,22 +222,41 @@
                     <label><input type="radio" name="anonymous" value="匿名"> 匿名刊登</label>
                 </div>
             </div>
-
-            <!-- 城市/地区 -->
             <div class="form-group">
                 <label>城市/地区（选填）</label>
-                <input type="text" id="region" placeholder="例如：东京 / 上海 / 沼津">
+                <select id="regionSelect">
+                    <option value="">请选择省份</option>
+                    <option value="北京市">北京市</option><option value="天津市">天津市</option>
+                    <option value="上海市">上海市</option><option value="重庆市">重庆市</option>
+                    <option value="河北省">河北省</option><option value="山西省">山西省</option>
+                    <option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option>
+                    <option value="黑龙江省">黑龙江省</option><option value="江苏省">江苏省</option>
+                    <option value="浙江省">浙江省</option><option value="安徽省">安徽省</option>
+                    <option value="福建省">福建省</option><option value="江西省">江西省</option>
+                    <option value="山东省">山东省</option><option value="河南省">河南省</option>
+                    <option value="湖北省">湖北省</option><option value="湖南省">湖南省</option>
+                    <option value="广东省">广东省</option><option value="海南省">海南省</option>
+                    <option value="四川省">四川省</option><option value="贵州省">贵州省</option>
+                    <option value="云南省">云南省</option><option value="陕西省">陕西省</option>
+                    <option value="甘肃省">甘肃省</option><option value="青海省">青海省</option>
+                    <option value="台湾省">台湾省</option>
+                    <option value="内蒙古自治区">内蒙古自治区</option>
+                    <option value="广西壮族自治区">广西壮族自治区</option>
+                    <option value="西藏自治区">西藏自治区</option>
+                    <option value="宁夏回族自治区">宁夏回族自治区</option>
+                    <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                    <option value="香港特别行政区">香港特别行政区</option>
+                    <option value="澳门特别行政区">澳门特别行政区</option>
+                    <option value="其他">其他（手动填写）</option>
+                </select>
+                <input type="text" id="regionOther" placeholder="请输入城市/地区" style="margin-top: 10px; display: none;">
             </div>
-
-            <!-- 信件内容 -->
             <div class="form-group">
                 <label class="required">写给善子的信</label>
                 <textarea id="letterBody" rows="6" placeholder="写下你想对善子说的话...（10-1500字）"></textarea>
                 <div class="char-counter"><span id="charCount">0</span> / 1500 字</div>
                 <div class="error-msg" id="letterError">请填写10-1500字</div>
             </div>
-
-            <!-- 同意刊物 -->
             <div class="form-group">
                 <label class="required">是否同意收录进纪念刊物</label>
                 <div class="radio-group">
@@ -275,8 +264,6 @@
                     <label><input type="radio" name="allowBooklet" value="不同意"> 不同意</label>
                 </div>
             </div>
-
-            <!-- 同意带到沼津 -->
             <div class="form-group">
                 <label class="required">是否同意整理后带到沼津河畔酒店等地</label>
                 <div class="radio-group">
@@ -284,8 +271,6 @@
                     <label><input type="radio" name="allowNumazu" value="不同意"> 不同意</label>
                 </div>
             </div>
-
-            <!-- 参与来源 -->
             <div class="form-group">
                 <label>参与来源（选填）</label>
                 <select id="source">
@@ -298,21 +283,18 @@
                     <option value="其他">其他</option>
                 </select>
             </div>
-
-            <button class="btn" id="submitBtn">✧ 寄出这份心意 ✧</button>
-        </div>
-        <div class="footer">
-            <p>本企划为粉丝自发活动，非官方企划。<br>信件将用于纪念刊物及现地记录，不会用于其他商业用途。</p>
+            <button class="btn" id="btnSubmit">✧ 寄出这份心意 ✧</button>
+            <button class="btn btn-secondary" id="btnBackToHome">🏠 返回首页</button>
         </div>
     </div>
 
-    <!-- 成功页 -->
-    <div id="successPage" class="hidden">
+    <!-- 页面3：成功页 -->
+    <div id="pageSuccess" class="page hidden">
         <div class="card success-card">
             <h2>✧ 你的信已经成功投递 ✧</h2>
             <p>感谢你参与「全人類リトルデーモン企画」。<br><br>这份祝福将在整理后，与其他 Little Demon 的心意一起送往沼津河畔酒店等地。</p>
-            <button class="btn" id="backHomeBtn">🏠 返回首页</button>
-            <button class="btn btn-secondary" id="writeAgainBtn">✉️ 再写一封</button>
+            <button class="btn" id="btnSuccessToHome">🏠 返回首页</button>
+            <button class="btn btn-secondary" id="btnWriteAgain">✉️ 再写一封</button>
         </div>
         <div class="footer">
             <p>本企划为粉丝自发活动，非官方企划。</p>
@@ -322,120 +304,130 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-    // Supabase 配置（你提供的正确值）
+    // Supabase 配置
     const SUPABASE_URL = "https://okqfekxeqxqazahzqtgu.supabase.co";
     const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rcWZla3hlcXhxYXphaHpxdGd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExNTE1OTQsImV4cCI6MjA5NjcyNzU5NH0.GQK4aCdaTPl8GpfokKNGOrrWfn_47loYSQlh60maVtc";
 
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // DOM 元素
-    const formPage = document.getElementById('formPage');
-    const successPage = document.getElementById('successPage');
-    const submitBtn = document.getElementById('submitBtn');
+    // 页面元素
+    const pageHome = document.getElementById('pageHome');
+    const pageForm = document.getElementById('pageForm');
+    const pageSuccess = document.getElementById('pageSuccess');
+
+    // 按钮
+    const btnGoToForm = document.getElementById('btnGoToForm');
+    const btnBackToHome = document.getElementById('btnBackToHome');
+    const btnSuccessToHome = document.getElementById('btnSuccessToHome');
+    const btnWriteAgain = document.getElementById('btnWriteAgain');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    // 表单元素
     const nicknameInput = document.getElementById('nickname');
-    const regionInput = document.getElementById('region');
+    const regionSelect = document.getElementById('regionSelect');
+    const regionOther = document.getElementById('regionOther');
     const letterBody = document.getElementById('letterBody');
     const sourceSelect = document.getElementById('source');
     const charSpan = document.getElementById('charCount');
     const nicknameError = document.getElementById('nicknameError');
     const letterError = document.getElementById('letterError');
 
-    // 字数限制
+    // 页面切换函数
+    function showPage(page) {
+        pageHome.classList.add('hidden');
+        pageForm.classList.add('hidden');
+        pageSuccess.classList.add('hidden');
+        page.classList.remove('hidden');
+    }
+
+    // 地区：选择"其他"时显示输入框
+    regionSelect.addEventListener('change', function() {
+        regionOther.style.display = this.value === '其他' ? 'block' : 'none';
+    });
+
+    function getRegionValue() {
+        return regionSelect.value === '其他' ? (regionOther.value.trim() || '其他') : regionSelect.value;
+    }
+
+    // 字数统计
     letterBody.addEventListener('input', function() {
         let len = this.value.length;
-        if (len > 1500) {
-            this.value = this.value.slice(0, 1500);
-            len = 1500;
-        }
-        charSpan.textContent = len;
-        if (letterError.classList.contains('show')) letterError.classList.remove('show');
+        if (len > 1500) this.value = this.value.slice(0, 1500);
+        charSpan.textContent = Math.min(this.value.length, 1500);
+        letterError.classList.remove('show');
     });
 
-    nicknameInput.addEventListener('input', () => {
-        if (nicknameError.classList.contains('show')) nicknameError.classList.remove('show');
-    });
+    nicknameInput.addEventListener('input', () => nicknameError.classList.remove('show'));
 
-    // 获取单选值
     function getRadioValue(name) {
-        let selected = document.querySelector(`input[name="${name}"]:checked`);
-        return selected ? selected.value : '';
+        let el = document.querySelector(`input[name="${name}"]:checked`);
+        return el ? el.value : '';
     }
 
-    // 前端校验
     function validateForm() {
-        let valid = true;
-        const nickname = nicknameInput.value.trim();
-        const letter = letterBody.value.trim();
-        if (!nickname) {
+        let ok = true;
+        if (!nicknameInput.value.trim()) {
             nicknameError.classList.add('show');
-            valid = false;
-        } else {
-            nicknameError.classList.remove('show');
+            ok = false;
         }
-        const len = letter.length;
+        let len = letterBody.value.trim().length;
         if (len < 10 || len > 1500) {
             letterError.classList.add('show');
-            valid = false;
-        } else {
-            letterError.classList.remove('show');
+            ok = false;
         }
-        return valid;
+        return ok;
     }
 
-    function resetFormFields() {
+    function resetForm() {
         nicknameInput.value = '';
-        regionInput.value = '';
+        regionSelect.value = '';
+        regionOther.value = '';
+        regionOther.style.display = 'none';
         letterBody.value = '';
         sourceSelect.value = '';
         charSpan.textContent = '0';
-        // 重置单选为默认
-        document.querySelectorAll('input[name="anonymous"]')[0].checked = true;
-        document.querySelectorAll('input[name="allowBooklet"]')[0].checked = true;
-        document.querySelectorAll('input[name="allowNumazu"]')[0].checked = true;
+        document.querySelector('input[name="anonymous"][value="显示昵称"]').checked = true;
+        document.querySelector('input[name="allowBooklet"][value="同意"]').checked = true;
+        document.querySelector('input[name="allowNumazu"][value="同意"]').checked = true;
     }
 
-    function showSuccess() {
-        formPage.classList.add('hidden');
-        successPage.classList.remove('hidden');
-    }
+    // 按钮事件
+    btnGoToForm.onclick = () => showPage(pageForm);
+    btnBackToHome.onclick = () => showPage(pageHome);
+    btnSuccessToHome.onclick = () => showPage(pageHome);
+    btnWriteAgain.onclick = () => {
+        resetForm();
+        showPage(pageForm);
+    };
 
-    function showForm() {
-        successPage.classList.add('hidden');
-        formPage.classList.remove('hidden');
-        resetFormFields();
-    }
-
-    // 提交到 Supabase
-    submitBtn.onclick = async () => {
+    // 提交
+    btnSubmit.onclick = async () => {
         if (!validateForm()) return;
 
         const data = {
             nickname: nicknameInput.value.trim(),
             anonymous: getRadioValue('anonymous'),
-            region: regionInput.value.trim() || null,
+            region: getRegionValue() || null,
             letter_body: letterBody.value.trim(),
             allow_booklet: getRadioValue('allowBooklet'),
             allow_numazu: getRadioValue('allowNumazu'),
             source: sourceSelect.value || null
         };
 
-        submitBtn.disabled = true;
-        submitBtn.innerText = '✧ 寄送中... ✧';
+        btnSubmit.disabled = true;
+        btnSubmit.innerText = '✧ 寄送中... ✧';
 
         const { error } = await supabase.from('letters').insert([data]);
 
         if (error) {
-            alert('提交失败：' + error.message + '，请稍后重试');
-            console.error(error);
+            alert('提交失败：' + error.message);
         } else {
-            showSuccess();
+            resetForm();
+            showPage(pageSuccess);
         }
-        submitBtn.disabled = false;
-        submitBtn.innerText = '✧ 寄出这份心意 ✧';
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = '✧ 寄出这份心意 ✧';
     };
-
-    document.getElementById('backHomeBtn').addEventListener('click', showForm);
-    document.getElementById('writeAgainBtn').addEventListener('click', showForm);
 </script>
 </body>
 </html>
