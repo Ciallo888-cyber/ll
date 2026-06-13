@@ -14,18 +14,18 @@
             min-height: 100vh;
             position: relative;
         }
-        /* 装饰背景图 */
-        body::before {
-            content: "";
+        /* 装饰背景图 - 修复版 */
+        .bg-decoration {
             position: fixed;
             bottom: 0;
             right: 0;
             width: 200px;
             height: 200px;
             background-image: url('https://cdn.jsdelivr.net/gh/Ciallo888-cyber/ll/yoshiko_transparent.png');
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: bottom right;
-            opacity: 0.2;
+            opacity: 0.25;
             pointer-events: none;
             z-index: 0;
         }
@@ -103,10 +103,14 @@
             body { padding: 12px 10px 32px; }
             .card { padding: 18px 14px; }
             .hero h1 { font-size: 22px; }
+            .bg-decoration { width: 150px; height: 150px; }
         }
     </style>
 </head>
 <body>
+<!-- 装饰图片独立元素 -->
+<div class="bg-decoration"></div>
+
 <div class="container">
     <!-- 页面1：首页 -->
     <div id="pageHome" class="page">
