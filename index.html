@@ -14,23 +14,23 @@
             min-height: 100vh;
             position: relative;
         }
-        /* 装饰图片 - 居中放大版 */
+        /* 装饰图片 */
         .bg-decoration {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-            opacity: 0.15;
+            opacity: 0.35;
             pointer-events: none;
-            z-index: 0;
+            z-index: -1;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             width: 100%;
             position: relative;
-            z-index: 1;
+            z-index: 10;
         }
         .card {
             background: rgba(30, 15, 55, 0.75);
@@ -105,7 +105,6 @@
 </head>
 <body>
 
-<!-- 装饰图片 - 居中显示 -->
 <img class="bg-decoration" src="https://cdn.jsdelivr.net/gh/Ciallo888-cyber/ll/yoshiko_transparent.png" alt="小恶魔装饰">
 
 <div class="container">
@@ -187,7 +186,7 @@
                 </div>
             </div>
             <button class="btn" id="btnSubmit">✧ 寄出这份心意 ✧</button>
-            <button class="btn btn-secondary" id="btnBackToHome">🏠 返回首页</button>
+            <button class="btn btn-secondary" id="btnBackToHome">返回首页</button>
         </div>
     </div>
 
@@ -195,8 +194,8 @@
         <div class="card success-card">
             <h2>✧ 你的信已经成功投递 ✧</h2>
             <p>感谢你参与「全人類リトルデーモン企画」。<br><br>你的祝福将被收录进纪念刊物。</p>
-            <button class="btn" id="btnSuccessToHome">🏠 返回首页</button>
-            <button class="btn btn-secondary" id="btnWriteAgain">✉️ 再写一封</button>
+            <button class="btn" id="btnSuccessToHome">返回首页</button>
+            <button class="btn btn-secondary" id="btnWriteAgain">再写一封</button>
         </div>
         <div class="footer">
             <p>本企划为粉丝自发活动，非官方企划。</p>
