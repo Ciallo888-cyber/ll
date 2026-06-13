@@ -6,6 +6,7 @@
     <title>全人類リトルデーモン企画｜津岛善子 7.13 生日前期写信企划</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
         body {
             background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -14,31 +15,67 @@
             min-height: 100vh;
             position: relative;
         }
+        
+        /* 背景图片 - 跟随滚动，不固定 */
         .bg-decoration {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            opacity: 0.35;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%;
+            background-image: url('/images/yoshiko_transparent.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center top;
+            opacity: 0.25;
             pointer-events: none;
-            z-index: -1;
+            z-index: 0;
         }
+        
         .container {
             max-width: 600px;
             margin: 0 auto;
             width: 100%;
             position: relative;
-            z-index: 10;
+            z-index: 1;
         }
+        
+        /* 卡片半透明，让背景图透上来 */
         .card {
-            background: rgba(30, 15, 55, 0.75);
-            backdrop-filter: blur(8px);
+            background: rgba(30, 15, 55, 0.55);
+            backdrop-filter: blur(4px);
             border-radius: 28px;
             padding: 20px 18px;
             margin-bottom: 20px;
-            border: 1px solid rgba(180, 100, 220, 0.35);
+            border: 1px solid rgba(180, 100, 220, 0.4);
+            position: relative;
+            z-index: 1;
         }
+        
+        /* 所有输入框在最高层 */
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(15, 8, 30, 0.98);
+            border: 1px solid #8b5cf6;
+            border-radius: 24px;
+            font-size: 16px;
+            color: #fff;
+            font-family: inherit;
+            position: relative;
+            z-index: 10;
+        }
+        input, select { height: 52px; }
+        textarea { min-height: 150px; resize: vertical; }
+        
+        /* 按钮和单选组也在高层 */
+        .btn, .radio-group, .image-upload-area {
+            position: relative;
+            z-index: 10;
+        }
+        
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #c084fc; box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3); }
+        
         .hero h1 { font-size: 24px; text-align: center; line-height: 1.35; }
         .hero h1 small { font-size: 13px; display: block; color: #d9c6ff; margin-top: 8px; }
         .hero .sub { text-align: center; font-size: 13px; color: #cdb5ff; margin-top: 12px; border-top: 1px solid rgba(180, 100, 220, 0.3); padding-top: 12px; }
@@ -46,21 +83,9 @@
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
         .required:after { content: " *"; color: #ff8888; }
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 16px;
-            background: rgba(15, 8, 30, 0.9);
-            border: 1px solid #8b5cf6;
-            border-radius: 24px;
-            font-size: 16px;
-            color: #fff;
-            font-family: inherit;
-        }
-        input, select { height: 52px; }
-        textarea { min-height: 150px; resize: vertical; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: #c084fc; box-shadow: 0 0 0 2px rgba(192, 132, 252, 0.3); }
+        
         .radio-group {
-            background: rgba(20, 10, 40, 0.6);
+            background: rgba(20, 10, 40, 0.7);
             padding: 12px 14px;
             border-radius: 32px;
             display: flex;
@@ -72,9 +97,10 @@
         .char-counter { font-size: 12px; margin-top: 6px; color: #b9a5ff; text-align: right; }
         .error-msg { color: #ff9e9e; font-size: 12px; margin-top: 6px; display: none; }
         .error-msg.show { display: block; }
+        
         /* 图片上传样式 */
         .image-upload-area {
-            background: rgba(20, 10, 40, 0.5);
+            background: rgba(20, 10, 40, 0.6);
             border: 2px dashed #8b5cf6;
             border-radius: 24px;
             padding: 20px;
@@ -84,7 +110,7 @@
         }
         .image-upload-area:hover {
             border-color: #c084fc;
-            background: rgba(20, 10, 40, 0.7);
+            background: rgba(20, 10, 40, 0.8);
         }
         .image-preview {
             margin-top: 12px;
@@ -119,6 +145,7 @@
             color: #a78bfa;
             margin-top: 8px;
         }
+        
         .btn {
             width: 100%;
             padding: 14px 20px;
@@ -141,17 +168,18 @@
         .footer { text-align: center; font-size: 11px; color: #8c7aaf; margin-top: 30px; }
         .page { display: block; }
         .page.hidden { display: none; }
+        
         @media (max-width: 400px) {
             body { padding: 12px 10px 32px; }
             .card { padding: 18px 14px; }
             .hero h1 { font-size: 22px; }
-            .bg-decoration { width: 250px; }
         }
     </style>
 </head>
 <body>
 
-<img class="bg-decoration" src="https://cdn.jsdelivr.net/gh/Ciallo888-cyber/ll/yoshiko_transparent.png" alt="小恶魔装饰">
+<!-- 背景图片层 -->
+<div class="bg-decoration"></div>
 
 <div class="container">
     <div id="pageHome" class="page">
@@ -192,31 +220,28 @@
             <div class="form-group">
                 <label>所在地区（选填）</label>
                 <select id="regionSelect">
-                    <option value="">请选择省份</option>
-                    <option value="北京市">北京市</option><option value="天津市">天津市</option>
-                    <option value="上海市">上海市</option><option value="重庆市">重庆市</option>
-                    <option value="河北省">河北省</option><option value="山西省">山西省</option>
-                    <option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option>
-                    <option value="黑龙江省">黑龙江省</option><option value="江苏省">江苏省</option>
-                    <option value="浙江省">浙江省</option><option value="安徽省">安徽省</option>
-                    <option value="福建省">福建省</option><option value="江西省">江西省</option>
-                    <option value="山东省">山东省</option><option value="河南省">河南省</option>
-                    <option value="湖北省">湖北省</option><option value="湖南省">湖南省</option>
-                    <option value="广东省">广东省</option><option value="海南省">海南省</option>
-                    <option value="四川省">四川省</option><option value="贵州省">贵州省</option>
-                    <option value="云南省">云南省</option><option value="陕西省">陕西省</option>
-                    <option value="甘肃省">甘肃省</option><option value="青海省">青海省</option>
-                    <option value="台湾省">台湾省</option>
-                    <option value="内蒙古自治区">内蒙古自治区</option>
-                    <option value="广西壮族自治区">广西壮族自治区</option>
-                    <option value="西藏自治区">西藏自治区</option>
-                    <option value="宁夏回族自治区">宁夏回族自治区</option>
-                    <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
-                    <option value="香港特别行政区">香港特别行政区</option>
-                    <option value="澳门特别行政区">澳门特别行政区</option>
+                    <option value="">请选择城市</option>
+                    <option value="郑州市">郑州市</option>
+                    <option value="开封市">开封市</option>
+                    <option value="洛阳市">洛阳市</option>
+                    <option value="平顶山市">平顶山市</option>
+                    <option value="安阳市">安阳市</option>
+                    <option value="鹤壁市">鹤壁市</option>
+                    <option value="新乡市">新乡市</option>
+                    <option value="焦作市">焦作市</option>
+                    <option value="濮阳市">濮阳市</option>
+                    <option value="许昌市">许昌市</option>
+                    <option value="漯河市">漯河市</option>
+                    <option value="三门峡市">三门峡市</option>
+                    <option value="南阳市">南阳市</option>
+                    <option value="商丘市">商丘市</option>
+                    <option value="信阳市">信阳市</option>
+                    <option value="周口市">周口市</option>
+                    <option value="驻马店市">驻马店市</option>
+                    <option value="济源市">济源市</option>
                     <option value="其他">其他（手动填写）</option>
                 </select>
-                <input type="text" id="regionOther" placeholder="请输入城市/地区" style="margin-top: 10px; display: none;">
+                <input type="text" id="regionOther" placeholder="请输入城市" style="margin-top: 10px; display: none;">
             </div>
             <div class="form-group">
                 <label class="required">写给善子的信</label>
@@ -231,7 +256,7 @@
                     📷 点击或拖拽上传图片
                     <input type="file" id="imageInput" accept="image/*" style="display: none;">
                 </div>
-                <div class="image-preview" id="imagePreview">
+                <div class="image-preview" id="imagePreview" style="display: none;">
                     <img id="previewImg" src="">
                     <button class="remove-image" id="removeImageBtn">×</button>
                 </div>
@@ -326,7 +351,7 @@
             }
         });
 
-        // 处理图片文件
+        // 处理图片文件（修复红叉问题：只在有图片时才显示预览区域）
         function handleImageFile(file) {
             if (file.size > 5 * 1024 * 1024) {
                 alert('图片不能超过 5MB');
@@ -342,7 +367,7 @@
             reader.readAsDataURL(file);
         }
 
-        // 移除图片
+        // 移除图片（修复：完全重置状态）
         removeImageBtn.addEventListener('click', () => {
             selectedImageBase64 = null;
             previewImg.src = '';
@@ -403,7 +428,7 @@
             regionOther.style.display = 'none';
             letterBody.value = '';
             charSpan.textContent = '0';
-            // 重置图片
+            // 重置图片（修复：完全重置，不残留预览）
             selectedImageBase64 = null;
             previewImg.src = '';
             imagePreview.style.display = 'none';
