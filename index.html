@@ -14,7 +14,6 @@
             min-height: 100vh;
             position: relative;
         }
-        /* 装饰图片 */
         .bg-decoration {
             position: fixed;
             top: 50%;
@@ -73,6 +72,53 @@
         .char-counter { font-size: 12px; margin-top: 6px; color: #b9a5ff; text-align: right; }
         .error-msg { color: #ff9e9e; font-size: 12px; margin-top: 6px; display: none; }
         .error-msg.show { display: block; }
+        /* 图片上传样式 */
+        .image-upload-area {
+            background: rgba(20, 10, 40, 0.5);
+            border: 2px dashed #8b5cf6;
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .image-upload-area:hover {
+            border-color: #c084fc;
+            background: rgba(20, 10, 40, 0.7);
+        }
+        .image-preview {
+            margin-top: 12px;
+            display: none;
+            position: relative;
+            display: inline-block;
+        }
+        .image-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 16px;
+            border: 1px solid #8b5cf6;
+        }
+        .remove-image {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-hint {
+            font-size: 12px;
+            color: #a78bfa;
+            margin-top: 8px;
+        }
         .btn {
             width: 100%;
             padding: 14px 20px;
@@ -178,6 +224,19 @@
                 <div class="char-counter"><span id="charCount">0</span> / 1500 字</div>
                 <div class="error-msg" id="letterError">请填写10-1500字</div>
             </div>
+            <!-- 图片上传区域 -->
+            <div class="form-group">
+                <label>上传图片（选填）</label>
+                <div class="image-upload-area" id="uploadArea">
+                    📷 点击或拖拽上传图片
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImg" src="">
+                    <button class="remove-image" id="removeImageBtn">×</button>
+                </div>
+                <div class="image-hint">支持 JPG、PNG、GIF，建议小于 5MB</div>
+            </div>
             <div class="form-group">
                 <label class="required">是否同意收录进纪念刊物</label>
                 <div class="radio-group">
@@ -228,6 +287,69 @@
         const charSpan = document.getElementById('charCount');
         const nicknameError = document.getElementById('nicknameError');
         const letterError = document.getElementById('letterError');
+
+        // 图片上传相关
+        const uploadArea = document.getElementById('uploadArea');
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewImg = document.getElementById('previewImg');
+        const removeImageBtn = document.getElementById('removeImageBtn');
+        let selectedImageBase64 = null;
+
+        // 点击上传区域触发文件选择
+        uploadArea.addEventListener('click', () => {
+            imageInput.click();
+        });
+
+        // 拖拽上传
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#c084fc';
+        });
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#8b5cf6';
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#8b5cf6';
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleImageFile(file);
+            }
+        });
+
+        // 选择文件
+        imageInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) {
+                handleImageFile(e.target.files[0]);
+            }
+        });
+
+        // 处理图片文件
+        function handleImageFile(file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert('图片不能超过 5MB');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                selectedImageBase64 = e.target.result;
+                previewImg.src = selectedImageBase64;
+                imagePreview.style.display = 'inline-block';
+                uploadArea.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // 移除图片
+        removeImageBtn.addEventListener('click', () => {
+            selectedImageBase64 = null;
+            previewImg.src = '';
+            imagePreview.style.display = 'none';
+            uploadArea.style.display = 'block';
+            imageInput.value = '';
+        });
 
         function showPage(page) {
             pageHome.classList.add('hidden');
@@ -281,6 +403,13 @@
             regionOther.style.display = 'none';
             letterBody.value = '';
             charSpan.textContent = '0';
+            // 重置图片
+            selectedImageBase64 = null;
+            previewImg.src = '';
+            imagePreview.style.display = 'none';
+            uploadArea.style.display = 'block';
+            imageInput.value = '';
+            // 重置单选
             document.querySelector('input[name="anonymous"][value="显示昵称"]').checked = true;
             document.querySelector('input[name="allowBooklet"][value="同意"]').checked = true;
         }
@@ -301,7 +430,8 @@
                 anonymous: getRadioValue('anonymous'),
                 region: getRegionValue() || null,
                 letter_body: letterBody.value.trim(),
-                allow_booklet: getRadioValue('allowBooklet')
+                allow_booklet: getRadioValue('allowBooklet'),
+                image_url: selectedImageBase64 || null
             };
 
             btnSubmit.disabled = true;
