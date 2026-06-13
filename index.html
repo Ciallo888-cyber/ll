@@ -14,18 +14,14 @@
             min-height: 100vh;
             position: relative;
         }
-        /* 装饰背景图 - 修复版 */
+        /* 装饰图片 - 居中放大版 */
         .bg-decoration {
             position: fixed;
-            bottom: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background-image: url('https://cdn.jsdelivr.net/gh/Ciallo888-cyber/ll/yoshiko_transparent.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom right;
-            opacity: 0.25;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            opacity: 0.15;
             pointer-events: none;
             z-index: 0;
         }
@@ -103,16 +99,16 @@
             body { padding: 12px 10px 32px; }
             .card { padding: 18px 14px; }
             .hero h1 { font-size: 22px; }
-            .bg-decoration { width: 150px; height: 150px; }
+            .bg-decoration { width: 250px; }
         }
     </style>
 </head>
 <body>
-<!-- 装饰图片独立元素 -->
-<div class="bg-decoration"></div>
+
+<!-- 装饰图片 - 居中显示 -->
+<img class="bg-decoration" src="https://cdn.jsdelivr.net/gh/Ciallo888-cyber/ll/yoshiko_transparent.png" alt="小恶魔装饰">
 
 <div class="container">
-    <!-- 页面1：首页 -->
     <div id="pageHome" class="page">
         <div class="card hero">
             <h1>全人類リトルデーモン企画<br><small>津岛善子 7.13 生日前期写信企划</small></h1>
@@ -130,7 +126,6 @@
         </div>
     </div>
 
-    <!-- 页面2：表单页 -->
     <div id="pageForm" class="page hidden">
         <div class="card hero">
             <h1>全人類リトルデーモン企画<br><small>津岛善子 7.13 生日前期写信企划</small></h1>
@@ -196,7 +191,6 @@
         </div>
     </div>
 
-    <!-- 页面3：成功页 -->
     <div id="pageSuccess" class="page hidden">
         <div class="card success-card">
             <h2>✧ 你的信已经成功投递 ✧</h2>
